@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #010038;
+    cursor: none;
+    background-image: url("space1.png");
+    background-size: 200px;
+    animation: moveBackground 60s linear infinite;
+}
+
+#game{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('space2.png');
+    background-size: 400px;
+    animation: moveBackground 20s linear infinite;
+}
+
+#controls{
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+#controls img{
+    width: 300px;
+}
+
+#version{
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('space3.png');
+    background-size: 300px;
+    animation: moveBackground 1s linear infinite;
+}
+
+#status_bar {
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    transform: translate(-10%, 0);
+    background-color: #2a2a2a;
+    width: 50vw;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+#status_bar div{
+    height: 100%;
+    margin: 5px 0 5px 0;
+    color: white;
+    border-radius: 7px;
+    padding-left: 5px;
+}
+
+#health_bar {
+    width: 100%;
+    background-color: #9c0000;
+}
+
+#boost_bar {
+    width: 0;
+    background-color: #dbba00;
+}
+
+#spaceship {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+}
+
+#spaceship_hit-box_main{
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    width: 20px;
+    height: 150px;
+    background-color: transparent;
+}
+
+#spaceship_hit-box_wing{
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+}
+
+.laser-beam {
+    position: absolute;
+    width: 10px;
+    height: 50px;
+    background-color: red;
+    opacity: 0;
+}
+
+.enemy {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    pointer-events: none;
+    animation-timing-function: linear;
+}
+
+#shootingStars{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 40vw;
+    max-width: 800px;
+}
+
+#score{
+    position: absolute;
+    top:0;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    z-index: 2;
+}
+
+#preGame{
+    width: 100vw;
+    height: 100vh;
+}
+
+#preGame #start{
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18%;
+    height: 10vh;
+    background-color: rgba(0,0,0,0);
+    background-image: url("ButtonStart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#preGame #start:hover{
+    background-image: url("ButtonSelectedStart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#gameOver{
+    position: absolute;
+    display: none;
+    background-color: rgba(100,0,0,0.6);
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+#gameOver #title{
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 20vh;
+    background-color: rgba(0,0,0,0);
+
+}
+
+#gameOver #restart{
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 10vh;
+    background-color: rgba(0,0,0,0);
+    background-image: url("ButtonRestart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#gameOver #restart:hover{
+    background-image: url("ButtonSelectedRestart.png");
+    cursor: pointer;
+}
+
+#gameOver #exit{
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 10vh;
+    background-color: rgba(0,0,0,0);
+    background-image: url("ButtonExit.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#gameOver #exit:hover{
+    background-image: url("ButtonSelectedExit.png");
+    cursor: pointer;
+}
+
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}

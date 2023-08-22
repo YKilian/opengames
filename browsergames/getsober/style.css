@@ -1,0 +1,153 @@
+:root {
+    /* Colors */
+    --background: #626679;
+    --chatbar: #3e4255;
+    --text: #ffffff;
+    --button: #089c2b;
+    --input: #3e4255;
+    --border: #686d83;
+    --gold: #dbba00;
+    --red: #9c0000;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background-color: var(--background);
+    padding: 0;
+    overflow: auto;
+}
+
+#chatbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--chatbar);
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    height: 10vh;
+    box-shadow: -10px 0px 30px 40px var(--chatbar)
+}
+
+#input {
+    background-color: var(--input);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 5px;
+    padding-right: 10%;
+    padding-left: 10px;
+    width: 50%;
+    height: 30%;
+    max-width: 800px;
+    font-size: 1.5em;
+    transform: translate(50px, -8vh);
+}
+
+#input:focus {
+    outline: none;
+}
+
+#send {
+    width: 50px;
+    height: 30%;
+    max-width: 100px;
+    font-size: 17px;
+    padding: 0px 20px 0px 20px;
+    color: var(--text);
+    background-color: var(--input);
+    transition: background-color 0.5s ease;
+    border: 0;
+    border-radius: 10px;
+    position: relative;
+    transform: translate(-15%, -8vh);
+}
+
+#send.green {
+    background-color: var(--button);
+    animation: colorChange 0.5s ease forwards;
+    cursor: pointer;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: var(--input);
+    }
+
+    100% {
+        background-color: var(--button);
+    }
+}
+
+#chatview {
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 90vh;
+    margin-bottom: 15vh;
+    padding: 0;
+    font-size: 1.3rem;
+}
+
+#chatview div {
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    max-width: 1500px;
+}
+
+#chatview div div {
+    padding: 0px;
+}
+
+#chatview div div img {
+    width: 50px;
+    margin-right: 10px;
+    background-color: #9c0000;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: #dbba00;
+    border-style: dotted;
+}
+
+.chatItemUser {
+    background-color: var(--background);
+}
+
+.chatItemNar {
+    background-color: var(--chatbar);
+}
+
+.chatItemSys {
+    background-color: var(--button);
+}
+
+.chatItemAch {
+    background-color: var(--gold);
+    display: flex;
+    flex-direction: row;
+}
+
+.chatItemEnd {
+    background-color: var(--red);
+}
+
+.blockInput {
+    border-color: var(--red);
+
+}
+
+.blockInput:hover {
+    cursor: not-allowed;
+}

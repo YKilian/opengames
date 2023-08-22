@@ -1,0 +1,55 @@
+[
+    {
+        "options": [
+            "start"
+        ],
+        "start": "Good day. Welcome to GetSober.  Choose your path to complete this game, where the goal is to get sober and find your way back home. This game won't display the control options, but you can view them by typing '/help'. Best of luck and have fun.",
+        "narator1": "You find yourself seated in a dimly lit tavern, with a drink placed in front of you. The sound of an old country music playing from a jukebox in the right corner fills the air, creating a nostalgic atmosphere. Despite the melodies, hunger gnaws at your stomach. The realization dawns upon you that you've already consumed five drinks, leaving you quite intoxicated. The circumstances surrounding your arrival at this place and the duration of your presence here remain a mystery. However, one thing is clear: you must find a way to leave this tavern and embark on the journey towards sobriety."
+    },
+    {
+        "options": [
+            "have a drink",
+            "order food",
+            "stand up"
+        ],
+        "haveADrink": "You start to feel a pleasant warmth spreading throughout your body. The intoxication has brought about a cozy and comforting sensation, enveloping you in a gentle embrace.",
+        "haveADrinkADD": "<br> But suddenly you see black. You drank to much and killed yourself.",
+        "orderFood": "As time goes by, the effects of intoxication begin to fade, and you gradually regain your sobriety. It becomes apparent that the barkeeper has placed a plate of random_food in front of you. Although you don't recall ordering anything, the enticing aroma prompts you to partake in the meal. Satisfied after finishing your food, a lingering thirst emerges, leading you to request another round of five drinks. As the hours slip away, the alcohol takes its toll once more, leaving you in a state of inebriation.",
+        "standUp": "Congratulations! Despite your inebriated state, you manage to maintain your balance and remain on your feet."
+    },
+    {
+        "options": [
+            "sit down",
+            "look around",
+            "go to the music box"
+        ],
+        "sitDown": "Uff. That was long enough. You sit down again. You feel dizzy and drunk.",
+        "lookAround": "As the night progresses, the tavern grows quieter, with only three remaining groups of patrons. In one corner, there are five older men with long beards engaged in a tranquil conversation while sipping on their beers. Their topic of discussion eludes your understanding. Not too far away, you notice a pair of individuals, a young man and a young woman, both appearing to be around 24 years old. Similar to yourself, they seem quite intoxicated, their merriment evident. The third group is noticeably larger, but your blurred vision prevents an accurate count. They are the liveliest bunch in the tavern, creating a boisterous atmosphere. It appears that someone within their group is celebrating a birthday, as evidenced by the festivities and heightened enthusiasm.",
+        "goToTheMusicBox1": "You come across a coin resting on the surface of the jukebox. Its aged appearance suggests it may hold some value. Given your inclination towards being a bit of a kleptomaniac, the thought of keeping it crosses your mind. However, there's a conflicting sentiment as you realize your disdain for the current song playing from the jukebox. Now you find yourself torn between the desire to possess the coin and the urge to distance yourself from the melody that grates on your ears.",
+        "goToTheMusicBox2": "You want to go back to the jukebox. But you feel to drunk. And to be honest: You want reach it without knocking out.",
+        "goToGroup1": "As you approach their table, the group of older men ceases their conversation, fixing their gaze upon you. In their eyes, you detect a glimmer that carries an ambiguous essence, making it difficult to discern whether it harbors positive or negative intentions. They observe you closely, exchanging unspoken messages among themselves, their silent communication intriguing yet mysterious. Then, one of the men hesitates for a moment before uttering a single word, his voice filled with uncertainty as he addresses you."
+    },
+    {
+        "options": [
+            "keep the coin",
+            "play the next song"
+        ],
+        "keepTheCoin": "Carefully scanning your surroundings to ensure no one is watching, you seize the opportunity to discreetly slip the coin into your pocket. Your actions go unnoticed, allowing you to secure the mysterious coin without drawing any attention to yourself.",
+        "playTheNextSong": "You decide to put the coin into the nearby jukebox, eager to replace the current song with something more to your liking. With a sense of anticipation, you make your selection, hoping that the new tune will bring you greater enjoyment than the one that was playing before. You choose the song..."
+    },
+    {
+        "options": [
+            "[Just type in, whatever you think is right]"
+        ],
+        "notVeolora1": "You are not the one we are looking for",
+        "notVeolora2": "You realize that the man's hesitant word implies that you are not the person they were seeking. It becomes apparent that their attention was not directed at you specifically, but rather at someone else. Relieved, you understand that their initial interest in you was merely a case of mistaken identity.",
+        "veolora": "Do you have the key?"
+    },
+    {
+        "options": [
+            "no"
+        ],
+        "yes": "I see. Its time to go. We will pay for your drinks and the food that you had. Go ahead. Our ship is at the harbor. If you see the harbor, you will know on which ship you need to go. The crew is already waiting for your arival.",
+        "no": "You return to the tavern, intrigued by the mention of a key and uncertain about its significance. Determined to uncover its whereabouts, you carefully scan the surroundings, knowing that the key must be hidden somewhere within the bar. With a mix of curiosity and anticipation, you begin your search, examining every nook and cranny, hoping to unravel the mystery that lies within the tavern's walls."
+    }
+]
