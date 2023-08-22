@@ -12,7 +12,7 @@ let boost = 0;
 let boost_available = false;
 const boost_bar = document.getElementById('boost_bar');
 const status_bar = document.getElementById('status_bar');
-const keyList =  [];
+const keyList = [];
 
 setInterval(switchSpaceshipImage, 150);
 
@@ -22,24 +22,24 @@ spaceship.addEventListener('dragstart', (event) => {
 document.addEventListener('contextmenu', (event) => {
     event.preventDefault();
 });
-document.addEventListener("dblclick", (event) =>{
+document.addEventListener("dblclick", (event) => {
     event.preventDefault();
 })
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
 
-function reset_all_val(){
+function reset_all_val() {
     score = 0;
     document.getElementById("score").innerHTML = "Score: " + score;
     currentImageIndex = 0;
     updateScore(-score);
-    updateHealth(-health+100);
+    updateHealth(-health + 100);
     updateBoost(-boost);
     health_bar.style.width = health + "%";
     set_spaceship_to_null();
 }
 
-function set_spaceship_to_null(){
+function set_spaceship_to_null() {
     spaceship.style.left = '50%';
     spaceship.style.top = '80%';
     spaceship_hit_box_main.style.left = '49%';
@@ -48,7 +48,7 @@ function set_spaceship_to_null(){
     spaceship_hit_box_wing.style.top = '85%';
 }
 
-function restart(){
+function restart() {
     reset_all_val()
     dead = false;
     document.getElementById("gameOver").style.display = "none";
@@ -56,23 +56,23 @@ function restart(){
     document.body.style.cursor = "none";
 }
 
-function exit(){
+function exit() {
     reset_all_val();
     pregame();
 }
 
-function pregame(){
+function pregame() {
     reset_all_val();
     spaceship.style.transform = 'translate(-50%, 0%)';
     document.body.style.cursor = "default";
-    dead= true;
+    dead = true;
     document.getElementById("gameOver").style.display = "none";
     document.getElementById("score").style.display = "none";
     status_bar.style.display = "none";
     document.getElementById("preGame").style.display = "block";
 }
 
-function start(){
+function start() {
     reset_all_val();
     document.getElementById("preGame").style.display = "none";
     document.getElementById("score").style.display = "block";
@@ -89,39 +89,39 @@ function updateScore(amount) {
     document.getElementById("score").innerHTML = "Score: " + score;
 }
 
-function updateHealth(amount){
+function updateHealth(amount) {
     health += amount;
-    if (health >= 100){
+    if (health >= 100) {
         health = 100;
     }
-    if (health <= 0){
+    if (health <= 0) {
         health = 0;
     }
     health_bar.style.width = health + "%";
     health_bar.innerHTML = health + "HP";
 }
 
-function updateBoost(amount){
+function updateBoost(amount) {
     boost += amount;
-    if (boost >= 100){
+    if (boost >= 100) {
         boost = 100;
     }
-    if (boost <= 0){
+    if (boost <= 0) {
         boost = 0;
     }
     boost_bar.style.width = boost + "%";
     boost_bar.innerHTML = boost + "%";
 }
 
-function keyDownHandler(event){
-    if (! keyList.includes(event.key)){
+function keyDownHandler(event) {
+    if (!keyList.includes(event.key)) {
         switch (event.key) {
             case " ":
                 keyList.push(event.key);
                 createLaserBeam(true);
                 break;
             case "m":
-                if (boost_available){
+                if (boost_available) {
                     makeBoost();
                 }
                 break;
@@ -129,12 +129,12 @@ function keyDownHandler(event){
     }
 }
 
-function makeBoost(){
-    if(boost > 0){
+function makeBoost() {
+    if (boost > 0) {
         updateBoost(-1)
         createLaserBeam(false);
     }
-    if (boost === 0){
+    if (boost === 0) {
         boost_available = false;
     }
 }
@@ -144,7 +144,7 @@ function keyUpHandler(event) {
     if (keyIndex !== -1) {
         keyList.splice(keyIndex, 1);
     }
-    if(event.key === 'm'){
+    if (event.key === 'm') {
         boost_available = false;
     }
 }
@@ -165,13 +165,13 @@ function createLaserBeam(canIncreaseBoost) {
     const spaceshipRect = spaceship.getBoundingClientRect();
     let laserX = 0;
     let laserY = 0;
-    if(canIncreaseBoost){
+    if (canIncreaseBoost) {
         let laserBeam = createNew();
         laserX = spaceshipRect.left + spaceshipRect.width / 2 - 5;
         laserY = spaceshipRect.top - 50;
         laserBeam.style.backgroundColor = 'red';
         shoot(laserBeam);
-    }else{
+    } else {
         let laserBeam = createNew();
         laserX = spaceshipRect.left + spaceshipRect.width / 4 - 13;
         laserY = spaceshipRect.top + spaceshipRect.height / 3 - 23;
@@ -184,14 +184,14 @@ function createLaserBeam(canIncreaseBoost) {
         shoot(laserBeam);
     }
 
-    function createNew(){
+    function createNew() {
         const laserBeam = document.createElement('div');
         laserBeam.classList.add('laser-beam');
         laserBeam.setAttribute('canIncreaseBoost', canIncreaseBoost);
         return laserBeam;
     }
 
-    function shoot(laserBeam){
+    function shoot(laserBeam) {
         laserBeam.style.left = laserX + 'px';
         laserBeam.style.top = laserY + 'px';
 
@@ -199,8 +199,8 @@ function createLaserBeam(canIncreaseBoost) {
         container.appendChild(laserBeam);
         const laserAnimation = laserBeam.animate(
             [
-                { top: laserY + 'px', opacity: 1 },
-                { top: -laserBeam.clientHeight + 'px', opacity: 0 }
+                {top: laserY + 'px', opacity: 1},
+                {top: -laserBeam.clientHeight + 'px', opacity: 0}
             ],
             {
                 duration: laserY,
@@ -218,7 +218,7 @@ function createLaserBeam(canIncreaseBoost) {
 
 function switchSpaceshipImage() {
     currentImageIndex = (currentImageIndex + 1) % spaceshipImages.length;
-    spaceship.src = spaceshipImages[currentImageIndex];
+    spaceship.src = "res/" + spaceshipImages[currentImageIndex];
 }
 
 function extractPoints(absolutePath) {
@@ -238,7 +238,7 @@ function extractPoints(absolutePath) {
 function update() {
     const container = document.getElementById('game-container');
     const containerHeight = container.clientHeight;
-    let maxItems = Math.min(50, 10+score/100);
+    let maxItems = Math.min(50, 10 + score / 100);
 
     function checkCollisions() {
         const fallingImages = document.querySelectorAll('.enemy');
@@ -249,41 +249,41 @@ function update() {
                 if (isCollision(fallingImage, laserBeam)) {
                     let eHealth = parseInt(fallingImage.getAttribute('HealthPoints') - 1);
                     let points = parseInt(fallingImage.getAttribute('Points'));
-                    if (eHealth <= 0){
+                    if (eHealth <= 0) {
                         updateScore(extractPoints(fallingImage.src))
                         if (container.contains(fallingImage)) {
                             container.removeChild(fallingImage);
                         }
-                        if (laserBeam.getAttribute('canIncreaseBoost') === 'true'){
+                        if (laserBeam.getAttribute('canIncreaseBoost') === 'true') {
                             updateBoost(points);
                         }
-                    }else{
+                    } else {
                         fallingImage.setAttribute('HealthPoints', eHealth.toString());
                     }
                     if (container.contains(laserBeam)) {
                         container.removeChild(laserBeam);
                     }
-                    if (boost >= 100){
+                    if (boost >= 100) {
                         boost_available = true;
                     }
                 }
             });
 
-            if (isCollision(fallingImage, spaceship_hit_box_main)){
+            if (isCollision(fallingImage, spaceship_hit_box_main)) {
                 updateHealth(-10)
                 if (container.contains(fallingImage)) {
                     container.removeChild(fallingImage);
                 }
             }
 
-            if (isCollision(fallingImage, spaceship_hit_box_wing)){
+            if (isCollision(fallingImage, spaceship_hit_box_wing)) {
                 updateHealth(-5)
                 if (container.contains(fallingImage)) {
                     container.removeChild(fallingImage);
                 }
             }
 
-            if (health <= 0){
+            if (health <= 0) {
                 gameOver();
             }
 
@@ -323,17 +323,17 @@ function update() {
         enemy.style.left = randomX + 'px';
         enemy.style.top = randomY + 'px';
 
-        if(!dead){
+        if (!dead) {
             container.appendChild(enemy);
         }
 
         const fallAnimation = enemy.animate(
             [
-                { top: randomY + 'px'},
-                { top: container.clientHeight + 'px'}
+                {top: randomY + 'px'},
+                {top: container.clientHeight + 'px'}
             ],
             {
-                duration: 9000 - points*100 - Math.min(5000, score),
+                duration: 9000 - points * 100 - Math.min(5000, score),
                 easing: 'linear'
             }
         );
@@ -349,16 +349,16 @@ function update() {
     checkCollisions();
 
     setInterval(() => {
-        maxItems = Math.min(50, 10+score/100);
+        maxItems = Math.min(50, 10 + score / 100);
         if (document.querySelectorAll('.enemy').length < maxItems) {
-            const randomImageUrl = pointsImages[Math.floor(Math.random() * pointsImages.length)];
+            const randomImageUrl = "res/" + pointsImages[Math.floor(Math.random() * pointsImages.length)];
             createEnemy(randomImageUrl);
         }
     }, 100);
 }
 
 function gameOver() {
-    dead=true;
+    dead = true;
     document.getElementById("gameOver").style.display = "block";
     document.removeEventListener('mousemove', moveSpaceship);
     document.body.style.cursor = "default"

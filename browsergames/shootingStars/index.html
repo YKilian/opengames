@@ -2,33 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Shooting Stars</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
 <div id="game">
     <div id="game-container">
-        <div id = "status_bar">
+        <div id="status_bar">
             <div id="health_bar">100 HP</div>
             <div id="boost_bar">0%</div>
         </div>
-        <img src="spaceship1.png" alt="Spaceship" id="spaceship">
+        <img alt="Spaceship" id="spaceship" src="res/spaceship1.png">
         <div id="spaceship_hit-box_main"></div>
         <div id="spaceship_hit-box_wing"></div>
         <div id="score"></div>
         <div id="gameOver">
-            <img src="GameOver.png" alt="Game Over" id="title">
+            <img alt="Game Over" id="title" src="res/GameOver.png">
             <button id="restart" onclick="restart()"></button>
             <button id="exit" onclick="exit()"></button>
         </div>
         <div id="preGame">
-            <img src="ShootingStars.png" alt="Shooting Stars" id="shootingStars">
+            <img alt="Shooting Stars" id="shootingStars" src="res/ShootingStars.png">
             <button id="start" onclick="start()"></button>
-            <div id = "controls">
-                <img src="controls.png" alt="Controls:">
+            <div id="controls">
+                <img alt="Controls:" src="res/controls.png">
             </div>
-            <div id = "version">
+            <div id="version">
                 V0.1
             </div>
         </div>
